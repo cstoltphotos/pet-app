@@ -4,12 +4,16 @@ from flask import Flask, render_template, request, redirect #imports peices from
 #request: gets data when forms are submitted
 #redirect: brings user back to home page
 import resend
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__) # starts a new webpage app, __name__ tells Flask where files are located
 # __name__ is a built in var for py, which gets a value depending on how the file is being used
 # this uses flask and tells it to use this file to run it, rather than another one
 
-resend.api_key = "re_1UeeNLJu_BRYPeG3ky2pZ9SEqNvsNVwXH"
+resend.api_key = os.getenv("RESEND_API_KEY")
 bookings = [] # creates list for things user wants
 
 @app.route('/') # when someone visits the homepage '/', run the home funct
@@ -44,7 +48,7 @@ def contact(): # runs when someone visits /book
             'state': state,
             'notes': notes 
             })
-        saveBookingsFile = open('photoBookings.txt', 'a')
+        saveBookingsFile = open('photoBookings.txt', 'w')
         saveBookingsFile.write("CONTACT REQUEST\n")
         saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
         saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")

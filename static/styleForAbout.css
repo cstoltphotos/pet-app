@@ -1,0 +1,37 @@
+img{
+    padding: 30px;
+    width: 900px;
+    height: auto;
+    transform: 0px, 50px;
+    border-radius: 50px;
+}
+
+body{
+    background-color: rgb(203, 175, 188);
+    
+}
+
+.main-body{
+    columns: 2;
+    column-gap: 40px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+h2{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    translate: 0px 10px;
+    margin-top: 0px;
+}
+
+p{
+    text-align: left;
+    margin-right: 100px;
+    font-size: 25px;
+    translate: 0px -30px;
+}
+
+

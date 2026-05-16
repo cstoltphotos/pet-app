@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleForGallery.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='horizNavigationBar.css') }}">
+    <title>Photo Gallery</title>
+</head>
+<body>
+
+    {% include 'navBar.html' %}
+    <main>
+        <h2>Pet Gallery</h2>
+            <div class = "booking-button">
+            <a href="/petBooking">
+                <button>Book a Pet Photoshoot!</button>
+            </a>
+        </div>
+        <div class="container"> <!--houses all photos-->
+            {% for photo in photos %}
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <div class="images"><img src="{{ url_for('static', filename='images/canine/' + photo) }}" alt=" ">
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

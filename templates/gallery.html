@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleForGalleryPres.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='horizNavigationBar.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logos/Logo2.png') }}">
+    <title>Photo Gallery</title>
+</head>
+<body>
+    {% include 'navBar.html' %}
+    <main>
+        <h2>Photo Galleries</h2>
+        <h3>Click a gallery to see more photos and book a shoot!</h3>
+        <div class="container"> <!--houses all photos-->
+            <!--EQUESTRIAN BUTTON-->
+            <div class="gallery-container w-2">
+                
+                <div class="gallery-item">
+                    <div class="images">
+                        <a href="/equestrianGallery">
+                            <img src="{{ url_for('static', filename='images/equestrian/Ziggy1.JPG') }}" 
+                            alt="Equestrian Gallery"></div>
+                        </a>
+                    <div class="text">Equestrian Gallery</div>
+                </div>
+            </div>
+
+            <!--DOG BUTTON-->
+            <div class="gallery-container w-2">
+                <div class="gallery-item">
+                    <div class="images">
+                        <a href="/petGallery">
+                            <img src="{{ url_for('static', filename='images/canine/Bowie2.JPG') }}" 
+                            alt="Dogs Gallery"></div>
+                        </a>
+                    <div class="text">Pet Gallery</div>
+                </div>
+            </div>
+
+            <!--PEOPLE BUTTON-->
+            <div class="gallery-container w-2 r-2">
+                <div class="gallery-item">
+                    <div class="images">
+                        <a href="/peopleGallery">
+                            <img src="{{ url_for('static', filename='images/people/Sarah1.JPG') }}" 
+                            alt="People Gallery"></div>
+                        </a>
+                    <div class="text">People Gallery</div>
+                </div>
+            </div>
+
+            <!--SKATE BUTTON-->
+            <div class="gallery-container w-4">
+                <div class="gallery-item">
+                    <div class="images">
+                        <a href="/skateGallery">
+                            <img src="{{ url_for('static', filename='images/skate/Skate1.JPG') }}" 
+                            alt="Skate Gallery"></div>
+                        </a>
+                    <div class="text">Skate Gallery</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='newBookingStyle.css') }}">
+        <title>Book a Session!</title>
+    </head>
+
+<body>
+
+    {% include 'navBar.html' %}
+    
+    <main class="main-body">
+        <div class="form-container"> <!--All of the Form Contents-->
+            <h1 class="contact-header">Equine Booking Request</h1>
+            <p class="subtitle">Fill Out This Form to Request a Session</p>
+            <h3 class="title-of-form">Client Info</h3>
+            <form method="POST">
+                <div class="name-row">
+                    <input 
+                        type="text"
+                        name="firstName"
+                        placeholder="First"
+                        required
+                    >
+                    <input
+                        type="text"
+                        name="lastName"
+                        placeholder="Last"
+                        required
+                    >
+                </div>
+            <input type="email" name="emailAdress" placeholder="Email Adress" required><br>
+            <input type="tel" name="telephoneNumber" placeholder="Phone Number"><br>
+            <div class="state-select">
+                <select name="state">
+                    <option value="" disabled selected hidden>Choose State of Shoot</option>
+                    <option value="ri">RI</option>
+                    <option value="ct">CT</option>
+                    <option value="ma">MA</option>
+                    <option value="nh">NH</option>
+                    <option value="me">ME</option>
+                </select>
+            </div>
+            <input type="text" name="petName" placeholder="Horse Name" required> <br>
+            <input type="text" name="petBreed" placeholder="Horse Breed" required> <br>
+            <input type="text" name="event" placeholder="Event (if applicable)"> <br>
+            <textarea name="notes" placeholder="Anything I should know?"></textarea><br>
+            <button type="submit">Submit</button>
+
+            </form>
+        </div>
+    </main>
+    
+    {% include 'footer.html' %}
+</body>
+
+</html>

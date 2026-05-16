@@ -1,0 +1,70 @@
+body{
+    background-color: #ebdfeb;
+}
+
+main{
+      min-height: 60vh;
+}
+
+h2, p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    font-size: 50px;
+}
+
+p{
+    text-align: center;
+    font-size: 30px;
+}
+
+.home-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 300px;
+    padding: 15px;
+    color: black;
+    background-color: rgb(241, 195, 230);
+    border-radius: 8px;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+button:hover{
+    background-color: rgb(238, 214, 232);
+}
+
+.navbar ul{ /* styles unordered list elements */
+    list-style-type: none; /* removes bullet points from links */
+    background-color: #3a3838;
+    padding: 10px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.navbar a{  /* styles link elements in navbar class */
+    font-size: 30px;
+    color: white;
+    text-decoration: none; /* removes underline */
+    padding: 15px; /* adds indent of 15 pixels */
+    display: block; /* styles each element as block, not txt */
+    text-align: center;
+}
+
+.navbar a:hover{ /* when one hovers over one of the blocks, the color should change */
+    background-color: #232323;
+}
+
+.navbar li{
+    float: left;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='newBookingStyle.css') }}">
+        <title>Contact!</title>
+    </head>
+
+<body>
+    {% include 'navBar.html' %}
+    <main>
+        <div class="main-body">
+            <div class="form-container"> <!--All of the Form Contents-->
+                <h1 class="contact-header">Contact Me!</h1>
+                <p class="subtitle">Fill out your info and I'll get back to you when I can!</p>
+                <h3 class="title-of-form">Client Info</h3>
+                <form method="POST">
+                    <div class="name-row">
+                        <input 
+                            type="text"
+                            name="firstName"
+                            placeholder="First"
+                            required
+                        >
+                        <input
+                            type="text"
+                            name="lastName"
+                            placeholder="Last"
+                            required
+                        >
+                    </div>
+                <input type="email" name="emailAdress" placeholder="Email Adress" required><br>
+                <input type="tel" name="telephoneNumber" placeholder="Phone Number"><br>
+                <div class="state-select">
+                    <select name="state">
+                        <option value="" disabled selected hidden>Choose State of Shoot</option>
+                        <option value="ri">RI</option>
+                        <option value="ct">CT</option>
+                        <option value="ma">MA</option>
+                        <option value="nh">NH</option>
+                        <option value="me">ME</option>
+                    </select>
+                </div>
+                <textarea name="notes" placeholder="What Are You Wondering About?"></textarea><br>
+                <button type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+
+</html>

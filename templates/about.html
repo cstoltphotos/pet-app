@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleForAbout.css') }}">
+    <title>About Me</title>
+</head>
+<body>
+
+    {% include 'navBar.html' %}
+    <main>
+        <h2>About Me</h2>
+        <div class="main-body">
+            
+            <div class = 'image'>
+                <img src="{{ url_for('static', filename='images/people/Carter1.JPG') }}" 
+                alt="">
+            </div>
+            <p>
+                - Carter Stolt goes to the University of Maine and is majoring in Computer Science (he coded this website) and Business Administration. 
+                He picked up photography after he bought a camera for his high school film club, which he was president of for
+                two years. Film had always interested Carter and his experience in that made the transition to photography 
+                easier than other beginners may have found it. <br> 
+                - Carter now travels with his camera all over New England, especially on hikes, and has started his own photography 
+                business, hoping to save towards his long-term dream of opening a Cat Cafe!<br>
+                - Carter loves working with people, pets, and the environment to perfect photos and build community. Apart from 
+                photography, Carter tutors and tour-guides at UMaine, is vice-president  of the UMaine Volleyball Club, and 
+                attends meetings of the Microbiology Society!
+            </p>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

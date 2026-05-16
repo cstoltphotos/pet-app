@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='thankYouStyle.css') }}">
+        <title>Book a Session!</title>
+    </head>
+
+<body>
+{% include 'navBar.html' %}
+    <main>
+    <div class="main-body">
+        <h2>Thank you for requesting a session with us!</h2><br>
+        <p>
+            We will get back to you as soon as possible to find a date, time, and location for your photoshoot.<br>
+            <br>Any questions? Feel free to email us at cstoltphotos@gmail.com or DM us on insta @cstolt.photography</p>
+        <div class="home-button">
+            <a href="/gallery">
+                <button>Back To Home</button>
+            </a>
+        </div>
+    </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+
+</html>

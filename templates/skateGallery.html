@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleForGallery.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='horizNavigationBar.css') }}">
+    <title>Photo Gallery</title>
+</head>
+<body>
+
+    {% include 'navBar.html' %}
+    <main>
+        <h2>Skate Gallery </h2>
+        <h3>To book a skate photoshoot, please go through the people gallery!</h3>
+        <div class="container"> <!--houses all photos-->
+            {% for photo in photos %}
+            <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="images"><img src="{{ url_for('static', filename='images/skate/' + photo) }}" alt=" "></div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

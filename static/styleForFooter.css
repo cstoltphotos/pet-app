@@ -1,0 +1,42 @@
+.site-footer{
+    background-color: rgb(130, 149, 212);
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    align-items: center;
+    padding: 40px 0px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.site-footer img{
+    width: 300px;
+    border-radius: 15px;
+}
+
+
+.footer-section1 p{
+    font-size: 25px;
+}
+
+.footer-section3{
+    display: flex;
+    align-items: top;
+}
+
+.footer-section3 p{
+    font-size: 30px;
+}
+
+.footer-section1, .footer-section2, .footer-section3{
+    max-width: 500px;
+}
+
+.footer-bottom{
+    background-color: rgb(130, 149, 212);
+}
+

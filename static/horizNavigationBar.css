@@ -1,0 +1,49 @@
+/* horizontal navigation bar */
+body {
+    margin: 0px;
+}
+
+.logo-on-header{
+    height: 50px;
+    width: auto;
+    padding: 0px;
+}
+
+main {
+    margin: 0px;
+    font-size: x-large;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    padding: 0px;
+}
+
+h2{
+    text-align: center;
+}
+.navbar ul{ /* styles unordered list elements */
+    list-style-type: none; /* removes bullet points from links */
+    background-color: rgb(31, 79, 34);
+    padding: 10px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.navbar a{  /* styles link elements in navbar class */
+    font-size: 40px;
+    color: white;
+    text-decoration: none; /* removes underline */
+    padding: 15px; /* adds indent of 15 pixels */
+    display: block; /* styles each element as block, not txt */
+    text-align: center;
+}
+
+.navbar a:hover{ /* when one hovers over one of the blocks, the color should change */
+    background-color: #232323;
+}
+
+.navbar li{
+    float: left;
+}
