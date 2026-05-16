@@ -48,20 +48,21 @@ def contact(): # runs when someone visits /book
             'state': state,
             'notes': notes 
             })
-        saveBookingsFile = open('photoBookings.txt', 'w')
-        saveBookingsFile.write("CONTACT REQUEST\n")
-        saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
-        saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
-        saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
-        saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
-        saveBookingsFile.close()
-        saveBookingsFile = open('photoBookings.txt', 'r')
-        txtContents=saveBookingsFile.read()
+        recentBooking = f"CONTACT REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\nExtra: {bookings[-1]['notes']}\n"
+        # saveBookingsFile = open('photoBookings.txt', 'w')
+        # saveBookingsFile.write("CONTACT REQUEST\n")
+        # saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
+        # saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
+        # saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
+        # saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
+        # saveBookingsFile.close()
+        # saveBookingsFile = open('photoBookings.txt', 'r')
+        # txtContents=saveBookingsFile.read()
         r = resend.Emails.send({
         "from": "onboarding@resend.dev",
         "to": "cstoltphotos@gmail.com",
         "subject": "New Client Request!",
-        "html": f"<p>{txtContents}</p>"
+        "html": f"<p>{recentBooking}</p>"
         })
 
         
