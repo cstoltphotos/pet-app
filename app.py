@@ -147,7 +147,7 @@ def equestrianBook(): # runs when someone visits /book
             'event': event,
             'notes': notes 
             })
-        recentBooking = f"HORSE REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Horse Name: {bookings[-1]['petName']} \n, Horse Breed: {bookings[-1]['petBreed']} \n, Event: {bookings[-1]['event']}  Extra: {bookings[-1]['notes']}\n"
+        recentBooking = f"HORSE REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Horse Name: {bookings[-1]['petName']} \n, Horse Breed: {bookings[-1]['petBreed']} \n, Event: {bookings[-1]['event']},  Extra: {bookings[-1]['notes']}\n"
 
         # saveBookingsFile = open('photoBookings.txt', 'a')
         # saveBookingsFile.write("EQUINE BOOKING REQUEST\n")
@@ -194,7 +194,7 @@ def peopleBook(): # runs when someone visits /book
             'event': event,
             'notes': notes 
             })
-        recentBooking = f"PEOPLE REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Number of People: {bookings[-1]['numberOfPeople']} \n, Reason For Shoot: {bookings[-1]['reasonForShoot']} \n, Event: {bookings[-1]['event']}  Extra: {bookings[-1]['notes']}\n"
+        recentBooking = f"PEOPLE REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Number of People: {bookings[-1]['numberOfPeople']} \n, Reason For Shoot: {bookings[-1]['reasonForShoot']} \n, Event: {bookings[-1]['event']},  Extra: {bookings[-1]['notes']}\n"
 
         # saveBookingsFile = open('photoBookings.txt', 'a')
         # saveBookingsFile.write("PEOPLE BOOKING REQUEST\n")
