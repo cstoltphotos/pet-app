@@ -34,4 +34,21 @@ p{
     translate: 0px -30px;
 }
 
+@media screen and (max-width: 600px) {
+    img{
+        width: 80%;
+        height: auto;
+    }
+    .main-body{
+        columns: 1;
+        font-size: 15px;
+    }
+    p{
+    text-align: center;
+    margin-right: 0px;
+    font-size: 15px;
+    translate: 0px 0px;
+    }
+}
+
 
