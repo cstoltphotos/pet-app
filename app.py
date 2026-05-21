@@ -222,66 +222,66 @@ def peopleBook(): # runs when someone visits /book
 def gallery():
     photos = [
         # enter photos
-        'Ziggy1.jpg',
-        'Tom1.jpg',
-        'Bowie1.jpg',
-        'Joust1.jpg', 
-        'Ziggy2.jpg',
-        'Sarah1.jpg',
-        'Theia1.jpg',
-        'Ziggy3.jpg',
-        'Winnie1.jpg'
+        'Ziggy1.JPG',
+        'Tom1.JPG',
+        'Bowie1.JPG',
+        'Joust1.JPG', 
+        'Ziggy2.JPG',
+        'Sarah1.JPG',
+        'Theia1.JPG',
+        'Ziggy3.JPG',
+        'Winnie1.JPG'
     ]
     return render_template("gallery.html", photos=photos) # opens html file and sends photos
 
 @app.route('/equestrianGallery')
 def equestrianGallery():
     photos = [
-        'Ziggy1.jpg',
-        'Ziggy5.jpg',
-        'Joust3.jpg',
-        'Ziggy2.jpg',
-        'Joust1.jpg',
-        'Joust2.jpg',
-        'Ziggy4.jpg',
-        'Joust4.jpg',
-        'Ziggy6.jpg',
-        'Ziggy7.jpg'
+        'Ziggy1.JPG',
+        'Ziggy5.JPG',
+        'Joust3.JPG',
+        'Ziggy2.JPG',
+        'Joust1.JPG',
+        'Joust2.JPG',
+        'Ziggy4.JPG',
+        'Joust4.JPG',
+        'Ziggy6.JPG',
+        'Ziggy7.JPG'
     ]
     return render_template("equestrianGallery.html", photos=photos) # opens html file and sends photos
 
 @app.route('/petGallery')
 def petGallery():
     photos = [
-       'Theia1.jpg',
-       'Winnie1.jpg',
-       'RenDog2.jpg',
-       'RenDog1.jpg',
-       'ZoCat1.jpg',
-       'Bowie2.jpg'
+       'Theia1.JPG',
+       'Winnie1.JPG',
+       'RenDog2.JPG',
+       'RenDog1.JPG',
+       'ZoCat1.JPG',
+       'Bowie2.JPG'
     ]
     return render_template("petGallery.html", photos=photos) # opens html file and sends photos
 
 @app.route('/peopleGallery')
 def peopleGallery():
     photos = [
-        'Tom3.jpg',
-        'Tom1.jpg',
-        'Carter1.jpg',
-        'Sarah1.jpg',
-        'Tom2.jpg',
+        'Tom3.JPG',
+        'Tom1.JPG',
+        'Carter1.JPG',
+        'Sarah1.JPG',
+        'Tom2.JPG',
     ]
     return render_template("peopleGallery.html", photos=photos) # opens html file and sends photos
 
 @app.route('/skateGallery')
 def skateGallery():
     photos = [
-        'Skate1.jpg',
-        'Skate2.jpg',
-        'Skate6.jpg',
-        'Skate3.jpg',
-        'Skate5.jpg',
-        'Skate4.jpg',
+        'Skate1.JPG',
+        'Skate2.JPG',
+        'Skate6.JPG',
+        'Skate3.JPG',
+        'Skate5.JPG',
+        'Skate4.JPG',
 
     ]
     return render_template("skateGallery.html", photos=photos) # opens html file and sends photos
