@@ -246,7 +246,7 @@ def equestrianGallery():
         'Ziggy4.JPG',
         'Joust4.JPG',
         'Ziggy6.JPG',
-        'Ziggy7.JPG'
+        'Ziggy5.JPG'
     ]
     return render_template("equestrianGallery.html", photos=photos) # opens html file and sends photos
 
