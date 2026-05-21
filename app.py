@@ -101,16 +101,23 @@ def petBook(): # runs when someone visits /book
             'petBreed': petBreed,
             'notes': notes 
             })
-        saveBookingsFile = open('photoBookings.txt', 'a')
-        saveBookingsFile.write("PET BOOKING REQUEST\n")
-        saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
-        saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
-        saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
-        saveBookingsFile.write(f"Pet Name: {bookings[-1]['petName']}\n")
-        saveBookingsFile.write(f"Pet Species: {bookings[-1]['petSpecies']}\n")
-        saveBookingsFile.write(f"Pet Breed: {bookings[-1]['petBreed']}\n")
-        saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
-        saveBookingsFile.close()
+        recentBooking = f"PET REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Pet Name: {bookings[-1]['petName']} \n, Pet Species: {bookings[-1]['petSpecies']} \n, Pet Breed: {bookings[-1]['petBreed']} \n,  Extra: {bookings[-1]['notes']}\n"
+        # saveBookingsFile = open('photoBookings.txt', 'a')
+        # saveBookingsFile.write("PET BOOKING REQUEST\n")
+        # saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
+        # saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
+        # saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
+        # saveBookingsFile.write(f"Pet Name: {bookings[-1]['petName']}\n")
+        # saveBookingsFile.write(f"Pet Species: {bookings[-1]['petSpecies']}\n")
+        # saveBookingsFile.write(f"Pet Breed: {bookings[-1]['petBreed']}\n")
+        # saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
+        # saveBookingsFile.close()
+        r = resend.Emails.send({
+        "from": "onboarding@resend.dev",
+        "to": "cstoltphotos@gmail.com",
+        "subject": "New Client Request!",
+        "html": f"<p>{recentBooking}</p>"
+        })
 
         return redirect('/thankYou') # go back to homepage
     
@@ -140,17 +147,24 @@ def equestrianBook(): # runs when someone visits /book
             'event': event,
             'notes': notes 
             })
-        saveBookingsFile = open('photoBookings.txt', 'a')
-        saveBookingsFile.write("EQUINE BOOKING REQUEST\n")
-        saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
-        saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
-        saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
-        saveBookingsFile.write(f"Pet Name: {bookings[-1]['petName']}\n")
-        saveBookingsFile.write(f"Pet Breed: {bookings[-1]['petBreed']}\n")
-        saveBookingsFile.write(f"Event: {bookings[-1]['event']}\n")
-        saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
-        saveBookingsFile.close()
+        recentBooking = f"HORSE REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Horse Name: {bookings[-1]['petName']} \n, Horse Breed: {bookings[-1]['petBreed']} \n, Event: {bookings[-1]['event']}  Extra: {bookings[-1]['notes']}\n"
 
+        # saveBookingsFile = open('photoBookings.txt', 'a')
+        # saveBookingsFile.write("EQUINE BOOKING REQUEST\n")
+        # saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
+        # saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
+        # saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
+        # saveBookingsFile.write(f"Pet Name: {bookings[-1]['petName']}\n")
+        # saveBookingsFile.write(f"Pet Breed: {bookings[-1]['petBreed']}\n")
+        # saveBookingsFile.write(f"Event: {bookings[-1]['event']}\n")
+        # saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
+        # saveBookingsFile.close()
+        r = resend.Emails.send({
+        "from": "onboarding@resend.dev",
+        "to": "cstoltphotos@gmail.com",
+        "subject": "New Client Request!",
+        "html": f"<p>{recentBooking}</p>"
+        })
         return redirect('/thankYou') # go back to homepage
     
     return render_template('equineBooking.html') # if form not submitted, go back to booking page
@@ -180,17 +194,24 @@ def peopleBook(): # runs when someone visits /book
             'event': event,
             'notes': notes 
             })
-        saveBookingsFile = open('photoBookings.txt', 'a')
-        saveBookingsFile.write("PEOPLE BOOKING REQUEST\n")
-        saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
-        saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
-        saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
-        saveBookingsFile.write(f"Number of People: {bookings[-1]['numberOfPeople']}\n")
-        saveBookingsFile.write(f"Reason for Shoot: {bookings[-1]['reasonForShoot']}\n")
-        saveBookingsFile.write(f"Event: {bookings[-1]['event']}\n")
-        saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
-        saveBookingsFile.close()
+        recentBooking = f"PEOPLE REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Number of People: {bookings[-1]['numberOfPeople']} \n, Reason For Shoot: {bookings[-1]['reasonForShoot']} \n, Event: {bookings[-1]['event']}  Extra: {bookings[-1]['notes']}\n"
 
+        # saveBookingsFile = open('photoBookings.txt', 'a')
+        # saveBookingsFile.write("PEOPLE BOOKING REQUEST\n")
+        # saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
+        # saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
+        # saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
+        # saveBookingsFile.write(f"Number of People: {bookings[-1]['numberOfPeople']}\n")
+        # saveBookingsFile.write(f"Reason for Shoot: {bookings[-1]['reasonForShoot']}\n")
+        # saveBookingsFile.write(f"Event: {bookings[-1]['event']}\n")
+        # saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
+        # saveBookingsFile.close()
+        r = resend.Emails.send({
+        "from": "onboarding@resend.dev",
+        "to": "cstoltphotos@gmail.com",
+        "subject": "New Client Request!",
+        "html": f"<p>{recentBooking}</p>"
+        })
         return redirect('/thankYou') # go back to homepage
     
     return render_template('peopleBooking.html') # if form not submitted, go back to booking page
@@ -260,7 +281,8 @@ def skateGallery():
         'Skate6.jpg',
         'Skate3.jpg',
         'Skate5.jpg',
-        'Skate4.jpg'
+        'Skate4.jpg',
+
     ]
     return render_template("skateGallery.html", photos=photos) # opens html file and sends photos
 
