@@ -238,15 +238,14 @@ def gallery():
 def equestrianGallery():
     photos = [
         'Ziggy1.JPG',
-        'Ziggy5.JPG',
-        'Joust3.JPG',
         'Ziggy2.JPG',
+        'Joust3.JPG',
+        'Ziggy5.JPG',
         'Joust1.JPG',
         'Joust2.JPG',
         'Ziggy4.JPG',
         'Joust4.JPG',
-        'Ziggy6.JPG',
-        'Ziggy5.JPG'
+        'Ziggy6.JPG'
     ]
     return render_template("equestrianGallery.html", photos=photos) # opens html file and sends photos
 
