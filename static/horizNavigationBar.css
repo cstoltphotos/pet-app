@@ -47,3 +47,15 @@ h2{
 .navbar li{
     float: left;
 }
+
+@media screen and (max-width: 600px) {
+    .logo-on-header {
+        height: 15px;
+        width: auto;
+    }
+    h1{
+        font-size: 20px;
+    }
+    .narbar a{
+        font-size: 15px;
+}
