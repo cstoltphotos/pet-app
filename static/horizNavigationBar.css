@@ -56,8 +56,8 @@ h2{
     h1{
         font-size: 20px;
     }
-    .narbar{
-        font-size: 10px;
+    a{
+        font-size: 15px;
         padding: 5px; /* adds indent of 5 pixels */
     }
 }
