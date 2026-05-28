@@ -14,7 +14,7 @@ app = Flask(__name__) # starts a new webpage app, __name__ tells Flask where fil
 # this uses flask and tells it to use this file to run it, rather than another one
 
 resend.api_key = os.getenv("RESEND_API_KEY")
-bookings = [] # creates list for things user wants
+booking = {} # creates list for things user wants
 
 @app.route('/') # when someone visits the homepage '/', run the home funct
 # '/' is http://127,0.0.5000
@@ -41,20 +41,20 @@ def contact(): # runs when someone visits /book
         telephoneNumber = request.form['telephoneNumber']
         state = request.form['state']
         notes = request.form['notes']
-        bookings.append({ # append the values given to the array using a dictionary (each booking stored in a dict)
+        booking = { # append the values given to the array using a dictionary (each booking stored in a dict)
             'name': firstName + " " + lastName,
             'email': email,
             'telephoneNumber': telephoneNumber,
             'state': state,
             'notes': notes 
-            })
-        recentBooking = f"CONTACT REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\nExtra: {bookings[-1]['notes']}\n"
+            }
+        recentBooking = f"CONTACT REQUEST,\nName: {booking['name']},\nEmail: {booking['email']},\nPhone Number: {booking['telephoneNumber']},\nExtra: {booking['notes']}\n"
         # saveBookingsFile = open('photoBookings.txt', 'w')
         # saveBookingsFile.write("CONTACT REQUEST\n")
-        # saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
-        # saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
-        # saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
-        # saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
+        # saveBookingsFile.write(f"Name: {booking['name']}\n")
+        # saveBookingsFile.write(f"Email: {booking['email']}\n")
+        # saveBookingsFile.write(f"Phone Number: {booking['telephoneNumber']}\n")
+        # saveBookingsFile.write(f"Extra: {booking['notes']}\n")
         # saveBookingsFile.close()
         # saveBookingsFile = open('photoBookings.txt', 'r')
         # txtContents=saveBookingsFile.read()
@@ -91,7 +91,7 @@ def petBook(): # runs when someone visits /book
         petSpecies = request.form['petSpecies']
         petBreed = request.form['petBreed']
         notes = request.form['notes']
-        bookings.append({ # append the values given to the array using a dictionary (each booking stored in a dict)
+        booking = { # append the values given to the array using a dictionary (each booking stored in a dict)
             'name': firstName + " " + lastName,
             'email': email,
             'telephoneNumber': telephoneNumber,
@@ -100,17 +100,17 @@ def petBook(): # runs when someone visits /book
             'petSpecies': petSpecies,
             'petBreed': petBreed,
             'notes': notes 
-            })
-        recentBooking = f"PET REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Pet Name: {bookings[-1]['petName']} \n, Pet Species: {bookings[-1]['petSpecies']} \n, Pet Breed: {bookings[-1]['petBreed']} \n,  Extra: {bookings[-1]['notes']}\n"
+            }
+        recentBooking = f"PET REQUEST,\nName: {booking['name']},\nEmail: {booking['email']},\nPhone Number: {booking['telephoneNumber']},\n State: {booking['state']}, Pet Name: {booking['petName']} \n, Pet Species: {booking['petSpecies']} \n, Pet Breed: {booking['petBreed']} \n,  Extra: {booking['notes']}\n"
         # saveBookingsFile = open('photoBookings.txt', 'a')
         # saveBookingsFile.write("PET BOOKING REQUEST\n")
-        # saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
-        # saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
-        # saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
-        # saveBookingsFile.write(f"Pet Name: {bookings[-1]['petName']}\n")
-        # saveBookingsFile.write(f"Pet Species: {bookings[-1]['petSpecies']}\n")
-        # saveBookingsFile.write(f"Pet Breed: {bookings[-1]['petBreed']}\n")
-        # saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
+        # saveBookingsFile.write(f"Name: {booking['name']}\n")
+        # saveBookingsFile.write(f"Email: {booking['email']}\n")
+        # saveBookingsFile.write(f"Phone Number: {booking['telephoneNumber']}\n")
+        # saveBookingsFile.write(f"Pet Name: {booking['petName']}\n")
+        # saveBookingsFile.write(f"Pet Species: {booking['petSpecies']}\n")
+        # saveBookingsFile.write(f"Pet Breed: {booking['petBreed']}\n")
+        # saveBookingsFile.write(f"Extra: {booking['notes']}\n")
         # saveBookingsFile.close()
         r = resend.Emails.send({
         "from": "onboarding@resend.dev",
@@ -137,7 +137,7 @@ def equestrianBook(): # runs when someone visits /book
         petBreed = request.form['petBreed']
         event = request.form['event']
         notes = request.form['notes']
-        bookings.append({ # append the values given to the array using a dictionary (each booking stored in a dict)
+        booking = { # append the values given to the array using a dictionary (each booking stored in a dict)
             'name': firstName + " " + lastName,
             'email': email,
             'telephoneNumber': telephoneNumber,
@@ -146,18 +146,18 @@ def equestrianBook(): # runs when someone visits /book
             'petBreed': petBreed,
             'event': event,
             'notes': notes 
-            })
-        recentBooking = f"HORSE REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Horse Name: {bookings[-1]['petName']} \n, Horse Breed: {bookings[-1]['petBreed']} \n, Event: {bookings[-1]['event']},  Extra: {bookings[-1]['notes']}\n"
+            }
+        recentBooking = f"HORSE REQUEST,\nName: {booking['name']},\nEmail: {booking['email']},\nPhone Number: {booking['telephoneNumber']},\n State: {booking['state']}, Horse Name: {booking['petName']} \n, Horse Breed: {booking['petBreed']} \n, Event: {booking['event']},  Extra: {booking['notes']}\n"
 
         # saveBookingsFile = open('photoBookings.txt', 'a')
         # saveBookingsFile.write("EQUINE BOOKING REQUEST\n")
-        # saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
-        # saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
-        # saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
-        # saveBookingsFile.write(f"Pet Name: {bookings[-1]['petName']}\n")
-        # saveBookingsFile.write(f"Pet Breed: {bookings[-1]['petBreed']}\n")
-        # saveBookingsFile.write(f"Event: {bookings[-1]['event']}\n")
-        # saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
+        # saveBookingsFile.write(f"Name: {booking['name']}\n")
+        # saveBookingsFile.write(f"Email: {booking['email']}\n")
+        # saveBookingsFile.write(f"Phone Number: {booking['telephoneNumber']}\n")
+        # saveBookingsFile.write(f"Pet Name: {booking['petName']}\n")
+        # saveBookingsFile.write(f"Pet Breed: {booking['petBreed']}\n")
+        # saveBookingsFile.write(f"Event: {booking['event']}\n")
+        # saveBookingsFile.write(f"Extra: {booking['notes']}\n")
         # saveBookingsFile.close()
         r = resend.Emails.send({
         "from": "onboarding@resend.dev",
@@ -184,7 +184,7 @@ def peopleBook(): # runs when someone visits /book
         reasonForShoot = request.form['reasonForShoot']
         event = request.form['event']
         notes = request.form['notes']
-        bookings.append({ # append the values given to the array using a dictionary (each booking stored in a dict)
+        booking = { # append the values given to the array using a dictionary (each booking stored in a dict)
             'name': firstName + " " + lastName,
             'email': email,
             'telephoneNumber': telephoneNumber,
@@ -193,18 +193,18 @@ def peopleBook(): # runs when someone visits /book
             'reasonForShoot': reasonForShoot,
             'event': event,
             'notes': notes 
-            })
-        recentBooking = f"PEOPLE REQUEST,\nName: {bookings[-1]['name']},\nEmail: {bookings[-1]['email']},\nPhone Number: {bookings[-1]['telephoneNumber']},\n State: {bookings[-1]['state']}, Number of People: {bookings[-1]['numberOfPeople']} \n, Reason For Shoot: {bookings[-1]['reasonForShoot']} \n, Event: {bookings[-1]['event']},  Extra: {bookings[-1]['notes']}\n"
+            }
+        recentBooking = f"PEOPLE REQUEST,\nName: {booking['name']},\nEmail: {booking['email']},\nPhone Number: {booking['telephoneNumber']},\n State: {booking['state']}, Number of People: {booking['numberOfPeople']} \n, Reason For Shoot: {booking['reasonForShoot']} \n, Event: {booking['event']},  Extra: {booking['notes']}\n"
 
         # saveBookingsFile = open('photoBookings.txt', 'a')
         # saveBookingsFile.write("PEOPLE BOOKING REQUEST\n")
-        # saveBookingsFile.write(f"Name: {bookings[-1]['name']}\n")
-        # saveBookingsFile.write(f"Email: {bookings[-1]['email']}\n")
-        # saveBookingsFile.write(f"Phone Number: {bookings[-1]['telephoneNumber']}\n")
-        # saveBookingsFile.write(f"Number of People: {bookings[-1]['numberOfPeople']}\n")
-        # saveBookingsFile.write(f"Reason for Shoot: {bookings[-1]['reasonForShoot']}\n")
-        # saveBookingsFile.write(f"Event: {bookings[-1]['event']}\n")
-        # saveBookingsFile.write(f"Extra: {bookings[-1]['notes']}\n")
+        # saveBookingsFile.write(f"Name: {booking['name']}\n")
+        # saveBookingsFile.write(f"Email: {booking['email']}\n")
+        # saveBookingsFile.write(f"Phone Number: {booking['telephoneNumber']}\n")
+        # saveBookingsFile.write(f"Number of People: {booking['numberOfPeople']}\n")
+        # saveBookingsFile.write(f"Reason for Shoot: {booking['reasonForShoot']}\n")
+        # saveBookingsFile.write(f"Event: {booking['event']}\n")
+        # saveBookingsFile.write(f"Extra: {booking['notes']}\n")
         # saveBookingsFile.close()
         r = resend.Emails.send({
         "from": "onboarding@resend.dev",
